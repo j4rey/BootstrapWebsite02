@@ -1,0 +1,18 @@
+
+<accordion [closeOthers]="oneAtATime">
+  <accordion-group heading="Edit Website" [isOpen]="true" (isOpenChange)="websiteOpenChange($event)">
+    <app-clienteditwebsite></app-clienteditwebsite>
+  </accordion-group>
+  <accordion-group heading="Edit Home" (isOpenChange)="homeOpenChange($event)">
+    <app-clientedithome></app-clientedithome>
+  </accordion-group>
+  <accordion-group heading="Edit About" (isOpenChange)="aboutOpenChange($event)">
+    <app-clienteditabout></app-clienteditabout>
+  </accordion-group>
+  <accordion-group heading="Edit Download" (isOpenChange)="downloadOpenChange($event)">
+    <app-clienteditdownload></app-clienteditdownload>
+  </accordion-group>
+  <accordion-group heading="Edit Contact Us" (isOpenChange)="contactusOpenChange($event)">
+    <app-clienteditcontactus></app-clienteditcontactus>
+  </accordion-group>
+</accordion>

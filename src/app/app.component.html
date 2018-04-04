@@ -1,12 +1,24 @@
+<ng-container *ngIf="websitefound; else nowebsite">
+    <app-nav scroll></app-nav>
 
-<app-nav scroll></app-nav>
+    <app-header id="header"></app-header>
 
-<app-header id="header"></app-header>
+    <app-about id="about"></app-about>
 
-<app-about id="about"></app-about>
+    <app-gateway id="download"></app-gateway>
 
-<app-gateway id="download"></app-gateway>
+    <app-contactus id="contactus"></app-contactus>
 
-<app-contactus id="contactus"></app-contactus>
+    <app-footer></app-footer>
 
-<app-footer></app-footer>
+</ng-container>
+<ng-template #nowebsite>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <!-- <img src="../assets/img/loader.gif" alt="loading"> -->
+                <img src="../assets/img/pink_loading.gif" alt="loading">
+            </div>
+        </div>
+    </div>
+</ng-template>

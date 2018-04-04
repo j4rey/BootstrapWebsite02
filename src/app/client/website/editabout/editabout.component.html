@@ -1,0 +1,55 @@
+<form (ngSubmit)="onUpdateWebsiteAbout()" [formGroup]="aboutForm" class="form-horizontal">
+  <div class="form-group row">
+    <label for="header" class="col-form-label col-2">Header</label>
+    <div class="col-10">
+      <input type="text" id="header" name="header" class="form-control" required 
+      formControlName="header">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="backgroundImageUrl" class="col-form-label col-2">Background Image url</label>
+    <div class="col-10">
+      <input type="text" id="backgroundImageUrl" name="backgroundImageUrl" 
+      class="form-control"
+      formControlName="backgroundImageUrl"
+      pattern="^https?:\/\/(?:[a-z\-]+\.)+[a-z]{2,6}(?:\/[^\/#?]+)+\.(?:jpe?g|gif|png)$"
+      >
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="aboutparas" class="col-form-label col-2">Paragraphs</label>
+    <div class="col-10" formArrayName="paragraphs">
+      <div class="form-group row"
+        *ngFor="let paragraphCtrl of aboutForm.get('paragraphs').controls; let i = index"
+      [formGroupName]="i">
+        <div class="col-10">
+          <textarea class="form-control" id="lgFormGroupInput" 
+          placeholder="you@example.com"
+          formControlName = "text"
+          ></textarea>
+          <input type="hidden" id="lgFormGroupHidden" formControlName = "id">
+        </div>
+        <div class="col-2">
+          <input type="button" value="X">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="Inpisactive" class="col-form-label col-2">Active</label>
+    <div class="col-10">
+      <input type="checkbox" id="Inpisactive" name="Inpisactive" 
+      class="form-control"
+      formControlName="isActive"
+      >
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="offset-2">
+      <input type="submit" value="Update">
+      <input type="button" value="Add">
+    </div>
+  </div>
+</form>

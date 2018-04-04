@@ -1,3 +1,4 @@
+import { WebsiteService } from './../admin/website/website.service';
 import { ScrollService } from './../scroll.service';
 import { Component, OnInit, ViewChild, ElementRef, Inject, HostListener } from '@angular/core';
 import { WINDOW } from '../window.service';
@@ -12,11 +13,18 @@ export class NavComponent implements OnInit {
   @ViewChild('button') button: ElementRef;
 
   public navIsFixed = '';
+  websitename: string;
   constructor(private scrollService: ScrollService,
+    private websiteService: WebsiteService,
     @Inject(DOCUMENT) private document: Document,
-    @Inject(WINDOW) private window: Window) { }
+    @Inject(WINDOW) private window: Window
+  ) { }
   isCollapsed = true;
   ngOnInit() {
+    this.websiteService.websiteChanged.subscribe((data) => {
+      this.websitename = data.website.name;
+    });
+    this.websitename = this.websiteService.getWebsite().website.name;
   }
 
   ScrollTo(id, isMenu) {

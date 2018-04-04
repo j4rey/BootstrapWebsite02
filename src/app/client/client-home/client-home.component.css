@@ -1,0 +1,8 @@
+:host >>> .panel-title > div > div {
+    color: black;
+    text-transform: uppercase;
+}
+
+:host >>> .panel div {
+    color: black;
+}

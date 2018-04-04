@@ -1,0 +1,8 @@
+<form (ngSubmit)="onAddWebsite(f)" #f="ngForm">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" ngModel>
+
+  <label for="websiteurl">WebsiteUrl</label>
+  <input type="text" id="websiteurl" name="websiteurl" ngModel>
+  <input type="submit" value="Submit">
+</form>
