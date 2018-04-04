@@ -1,7 +1,5 @@
 # BootstrapWebsite
 
-# BootstrapWebApi
-
 ## To do list:
  - add & remove paragraph functionality
  - add lat-long input for contact us section
